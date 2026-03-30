@@ -15,7 +15,7 @@ RUN apt-get update && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install japanese font
-RUN apt-get install -y \
+RUN apt-get update && apt-get install -y \
     fonts-noto-cjk \
     fonts-dejavu-core \
     fontconfig && \
