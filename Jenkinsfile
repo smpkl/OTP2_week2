@@ -15,13 +15,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 // Run the tests first to generate data for Jacoco and JUnit
-                bat 'mvn clean test install' // For Windows agents
-            }
-        }
-        stage('Publish Test Results') {
-            steps {
-                // Publish JUnit test results
-                junit '**/target/surefire-reports/*.xml'
+                bat 'mvn clean install' // For Windows agents
             }
         }
         stage('Build Docker Image') {
