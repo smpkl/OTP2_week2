@@ -12,9 +12,8 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/smpkl/OTP2_week2.git'
             }
         }
-        stage('Run Tests') {
+        stage('Maven install') {
             steps {
-                // Run the tests first to generate data for Jacoco and JUnit
                 bat 'mvn clean install' // For Windows agents
             }
         }
